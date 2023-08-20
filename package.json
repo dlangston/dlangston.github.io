@@ -1,0 +1,19 @@
+{
+  "name": "elliotsite",
+  "version": "1.0.0",
+  "description": "Elliot's website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dlangston/ElliotSite.git"
+  },
+  "author": "me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dlangston/ElliotSite/issues"
+  },
+  "homepage": "https://github.com/dlangston/ElliotSite#readme"
+}

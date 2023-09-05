@@ -1,0 +1,133 @@
+body {
+  font-family: "Exo 2", sans-serif;
+}
+
+.heading {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 160px 72px min-content;
+  grid-template-areas: "... logo ..." "... nav ..." "... sec-nav ...";
+  justify-items: center;
+}
+.heading .logo {
+  grid-area: logo;
+  height: 191px;
+}
+.heading .nav, .heading .nav--sec {
+  grid-area: nav;
+}
+.heading .nav ul, .heading .nav--sec ul {
+  display: flex;
+  flex-flow: columns wrap;
+  gap: 16px;
+  list-style-type: none;
+}
+.heading .nav ul li, .heading .nav--sec ul li {
+  text-transform: uppercase;
+  font-size: 1rem;
+  width: max-content;
+}
+.heading .nav ul li a, .heading .nav--sec ul li a {
+  color: darkslategrey;
+  text-decoration: none;
+}
+.heading .nav ul li a:hover, .heading .nav--sec ul li a:hover {
+  color: gray;
+}
+.heading .nav--sec {
+  grid-area: sec-nav;
+  height: 32px;
+}
+.heading .nav--sec ul {
+  margin-top: 0;
+}
+.heading .nav--sec ul li {
+  font-size: 0.875rem;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "... main ...";
+  justify-items: center;
+}
+.main .mainContent {
+  grid-area: main;
+  display: grid;
+  gap: 24px;
+  width: 1088px;
+}
+.main .mainContent .pipeGrid,
+.main .mainContent .drawingGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 272px));
+}
+.main .mainContent .pipeGrid img,
+.main .mainContent .drawingGrid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.main .mainContent .tempCont {
+  height: 200px;
+  width: 1088px;
+  background: red;
+}
+.main .mainContent .mainItemGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 352px));
+  grid-auto-rows: minmax(100px, 352px);
+  gap: 16px;
+}
+.main .mainContent .mainItemGrid .tempGridCont {
+  width: 100%;
+  background: orange;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "... about ...";
+  padding: 48px;
+}
+.about .about-content {
+  grid-area: about;
+  width: 800px;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "... footer ...";
+  justify-items: center;
+  padding-top: 32px;
+}
+.footer .footerContent {
+  grid-area: footer;
+  display: grid;
+  gap: 24px;
+  width: 1088px;
+}
+.footer .footerContent .footerItemGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16px, 32px));
+  grid-auto-rows: minmax(16px, 32px);
+  justify-content: center;
+  gap: 16px;
+}
+.footer .footerContent .footerItemGrid .tempfooterCont {
+  width: 100%;
+}
+
+a.img-link {
+  text-decoration: none;
+}
+
+.container .targets-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 400px));
+  gap: 8px;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=style.css.map */

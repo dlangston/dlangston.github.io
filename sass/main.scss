@@ -114,24 +114,32 @@ body {
   grid-template-areas: "... footer ...";
   justify-items: center;
   padding-top: 32px;
+  margin-bottom: 65px;
 
   .footerContent {
     grid-area: footer;
     display: grid;
     gap: 24px;
     width: 1088px;
-
+    align-self: center;
 
     .footerItemGrid {
       display: grid;
+      align-self: center;
       grid-template-columns: repeat(auto-fit, minmax(16px, 32px));
       grid-auto-rows: minmax(16px, 32px);
-      justify-content: center;
       gap: 16px;
-
-      .tempfooterCont {
+      justify-content: center;
+      align-items: center;
+      
+      .footerCont {
         width: 100%;
-        // background: pink;
+        a {
+          color: #000000;
+          &:hover {
+            color: darkslategray;
+          }
+        }
       }
     }
   }

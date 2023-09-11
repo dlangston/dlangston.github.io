@@ -26,6 +26,7 @@ body {
   text-transform: uppercase;
   font-size: 1rem;
   width: max-content;
+  color: purple;
 }
 .heading .nav ul li a, .heading .nav--sec ul li a {
   color: darkslategrey;
@@ -43,6 +44,14 @@ body {
 }
 .heading .nav--sec ul li {
   font-size: 0.875rem;
+  color: purple;
+}
+.heading .nav--sec ul li a {
+  color: darkslategrey;
+  text-decoration: none;
+}
+.heading .nav--sec ul li a:hover {
+  color: gray;
 }
 
 .main {
@@ -56,6 +65,8 @@ body {
   display: grid;
   gap: 24px;
   width: 1088px;
+}
+.main .mainContent.videoItem {
   justify-items: center;
 }
 .main .mainContent .pipeGrid,
@@ -68,11 +79,6 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-.main .mainContent .tempCont {
-  height: 200px;
-  width: 1088px;
-  background: red;
 }
 .main .mainContent .mainItemGrid {
   display: grid;

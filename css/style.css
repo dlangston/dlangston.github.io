@@ -56,7 +56,7 @@ body {
 
 .main {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr auto 1fr;
   grid-template-areas: "... main ...";
   justify-items: center;
 }
@@ -65,9 +65,6 @@ body {
   display: grid;
   gap: 24px;
   width: 1088px;
-}
-.main .mainContent.videoItem {
-  justify-items: center;
 }
 .main .mainContent .pipeGrid,
 .main .mainContent .drawingGrid {
@@ -89,6 +86,15 @@ body {
 .main .mainContent .mainItemGrid .tempGridCont {
   width: 100%;
   background: orange;
+}
+.main .videoGrid {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1088px));
+  gap: 24px;
+}
+.main .videoGrid video {
+  width: 100%;
 }
 
 .about {

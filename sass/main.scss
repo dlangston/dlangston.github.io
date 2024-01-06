@@ -169,7 +169,7 @@ h3 {
     .footerItemGrid {
       display: grid;
       align-self: center;
-      grid-template-columns: repeat(auto-fit, minmax(16px, 32px));
+      grid-template-columns: repeat(auto-fit, minmax(16px, max-content));
       grid-auto-rows: minmax(16px, 32px);
       gap: 16px;
       justify-content: center;

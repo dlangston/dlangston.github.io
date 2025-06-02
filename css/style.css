@@ -117,6 +117,17 @@ h3 {
   width: 100%;
 }
 
+.upcoming {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "... about ...";
+  padding: 48px;
+}
+.upcoming .upcoming-content {
+  grid-area: about;
+  width: 800px;
+}
+
 .about {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

@@ -22,6 +22,14 @@ h3 {
     font-weight: 400;
 }
 
+a {
+    color: darkslategrey;
+    text-decoration: none;
+    &:hover {
+      color: gray;
+    }
+  }
+
 .heading {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -185,7 +193,7 @@ h3 {
       gap: 16px;
       justify-content: center;
       align-items: center;
-      
+
       .footerCont {
         width: 100%;
         a {
@@ -232,5 +240,22 @@ a.img-link {
     grid-template-columns: repeat(auto-fill, minmax(200px, 400px));
     gap: 8px;
     justify-content: center;
+  }
+}
+.event-images {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  grid-template-areas: "... event ...";
+  padding: 48px;
+  .collage-container {
+    grid-area: event;
+    align-content: center;
+    .collage {
+        width: 100%;
+    }
+    .editors-choice {
+      width: 50%;
+    }
   }
 }

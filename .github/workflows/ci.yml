@@ -24,3 +24,11 @@ jobs:
 
       - name: Run CI checks
         run: npm run ci
+
+      - name: Verify built entry is compiled asset
+        run: |
+          if grep -Eq 'src/.+\.jsx' dist/index.html; then
+            echo "Build output references source JSX entry. Expected compiled asset in dist/index.html."
+            cat dist/index.html
+            exit 1
+          fi

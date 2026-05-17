@@ -1,0 +1,9 @@
+{
+  "chat.tools.terminal.autoApprove": {
+    "npx vite": true,
+    "/^python3 -c \"import glob; p=glob\\.glob\\('dist/assets/index-\\*\\.js'\\)\\[0\\]; s=open\\(p,encoding='utf-8'\\)\\.read\\(\\); print\\('bundle:',p\\); print\\('has_data_svg:', 'data:image/svg\\+xml' in s\\); print\\('has_logo_ref:', 'elliot-hs_resized' in s\\); print\\('has_collage_ref:', 'collage-' in s\\); print\\('has_editors_ref:', 'elliot-editors-choice' in s\\)\"$/": {
+      "approve": true,
+      "matchCommandLine": true
+    }
+  }
+}

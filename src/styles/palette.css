@@ -1,0 +1,123 @@
+/*
+  Site Color Palette (single source of truth)
+  ------------------------------------------
+  Edit only this file to change theme colors safely.
+
+  1) Base tokens (`--color-*`) are raw palette values.
+  2) Semantic tokens (`--ui-*`) are what the app actually uses.
+  3) `:root` = light theme values.
+  4) `.dark` = dark theme overrides.
+
+  Recommended workflow:
+  - Change only `--ui-*` tokens first.
+  - Touch `--color-*` only when you want a new raw palette color.
+*/
+
+@theme {
+  --color-neutral-50: oklch(98.5% 0 0);
+  --color-neutral-100: oklch(97% 0 0);
+  --color-neutral-200: oklch(92.2% 0 0);
+  --color-neutral-700: oklch(37.1% 0 0);
+  --color-neutral-800: oklch(26.9% 0 0);
+  --color-neutral-900: oklch(20.5% 0 0);
+  --color-neutral-950: oklch(14.5% 0 0);
+
+  --color-slate-700: oklch(37.2% 0.044 257.287);
+  --color-slate-800: oklch(27.9% 0.041 260.031);
+  --color-slate-300: oklch(86.9% 0.022 252.894);
+  --color-slate-200: oklch(92.9% 0.013 255.508);
+
+  --color-gray-500: oklch(55.1% 0.027 264.364);
+  --color-gray-400: oklch(70.7% 0.022 261.325);
+
+  --color-cyan-700: oklch(52% 0.105 223.128);
+  --color-cyan-500: oklch(71.5% 0.143 215.221);
+  --color-cyan-400: oklch(78.9% 0.154 211.53);
+  --color-cyan-300: oklch(86.5% 0.127 207.078);
+}
+
+:root {
+  /* Light theme semantic tokens */
+  --ui-page-bg: var(--color-white);
+  --ui-page-text: var(--color-neutral-900);
+  --ui-surface-bg: var(--color-neutral-50);
+  --ui-surface-border: var(--color-neutral-200);
+  --ui-divider: var(--color-neutral-200);
+
+  --ui-link: var(--color-slate-700);
+  --ui-link-hover: var(--color-gray-500);
+  --ui-link-active: var(--color-slate-800);
+  --ui-muted-text: var(--color-neutral-800);
+
+  --ui-accent: var(--color-cyan-400);
+  --ui-accent-hover: var(--color-cyan-500);
+  --ui-press-link: var(--color-cyan-700);
+  --ui-press-link-hover: var(--color-cyan-500);
+
+  --ui-overlay-caption: var(--color-neutral-200);
+
+  --ui-modal-overlay: rgba(0, 0, 0, 0.85);
+  --ui-modal-control-bg: rgba(0, 0, 0, 0.60);
+  --ui-modal-control-hover-bg: rgba(0, 0, 0, 0.80);
+  --ui-modal-control-text: #ffffff;
+  --ui-modal-control-ring: #ffffff;
+  --ui-modal-loading-bg: #111827;
+  --ui-modal-loading-text: #ffffff;
+
+  --watermark-rgba: rgba(40, 40, 40, 0.75);
+
+  /*
+    Editor swatches (for color preview extensions)
+    These are reference-only tokens with literal values.
+  */
+  --preview-light-page-bg: #ffffff;
+  --preview-light-page-text: oklch(20.5% 0 0);
+  --preview-light-surface-bg: oklch(98.5% 0 0);
+  --preview-light-surface-border: oklch(92.2% 0 0);
+  --preview-light-link: oklch(37.2% 0.044 257.287);
+  --preview-light-link-hover: oklch(55.1% 0.027 264.364);
+  --preview-light-accent: oklch(78.9% 0.154 211.53);
+  --preview-light-accent-hover: oklch(71.5% 0.143 215.221);
+  --preview-light-press-link: oklch(52% 0.105 223.128);
+  --preview-light-press-link-hover: oklch(71.5% 0.143 215.221);
+}
+
+.dark {
+  /* Dark theme semantic tokens */
+  --ui-page-bg: var(--color-neutral-950);
+  --ui-page-text: var(--color-neutral-100);
+  --ui-surface-bg: var(--color-neutral-800);
+  --ui-surface-border: var(--color-neutral-700);
+  --ui-divider: var(--color-neutral-700);
+
+  --ui-link: var(--color-slate-300);
+  --ui-link-hover: var(--color-gray-400);
+  --ui-link-active: var(--color-slate-200);
+  --ui-muted-text: var(--color-neutral-200);
+
+  --ui-accent: var(--color-cyan-500);
+  --ui-accent-hover: var(--color-cyan-500);
+  --ui-press-link: var(--color-cyan-400);
+  --ui-press-link-hover: var(--color-cyan-300);
+
+  --ui-overlay-caption: var(--color-neutral-200);
+
+  --ui-modal-overlay: rgba(0, 0, 0, 0.85);
+  --ui-modal-control-bg: rgba(0, 0, 0, 0.60);
+  --ui-modal-control-hover-bg: rgba(0, 0, 0, 0.80);
+  --ui-modal-control-text: #ffffff;
+  --ui-modal-control-ring: #ffffff;
+  --ui-modal-loading-bg: #111827;
+  --ui-modal-loading-text: #ffffff;
+
+  /* Editor swatches for dark theme tokens */
+  --preview-dark-page-bg: oklch(14.5% 0 0);
+  --preview-dark-page-text: oklch(97% 0 0);
+  --preview-dark-surface-bg: oklch(26.9% 0 0);
+  --preview-dark-surface-border: oklch(37.1% 0 0);
+  --preview-dark-link: oklch(86.9% 0.022 252.894);
+  --preview-dark-link-hover: oklch(70.7% 0.022 261.325);
+  --preview-dark-link-active: oklch(92.9% 0.013 255.508);
+  --preview-dark-press-link: oklch(78.9% 0.154 211.53);
+  --preview-dark-press-link-hover: oklch(86.5% 0.127 207.078);
+}

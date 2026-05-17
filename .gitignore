@@ -1,5 +1,13 @@
+# Dependencies
 node_modules
+
+# macOS
 .DS_Store
-pages/.DS_Store
-pages/sculpture/pipe-cleaners/.DS_Store
-pages/sculpture/pipe-cleaners/img/.DS_Store
+
+# Build output
+dist
+
+# Development
+.vscode/launch.json
+.env.local
+.env.*.local

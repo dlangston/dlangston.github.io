@@ -15,7 +15,6 @@ function getVideoMimeType(src) {
 export default function VideoPage() {
   return (
     <section className="space-y-10">
-      <h1 className="text-3xl font-semibold">Video</h1>
       {videoSections.map((section) => (
         <div key={section.title} className="space-y-4 rounded-2xl border border-[color:var(--ui-surface-border)] bg-[var(--ui-surface-bg)] p-4">
           <h2 className="text-2xl font-normal">{section.title}</h2>

@@ -28,18 +28,19 @@ After editing, run `npm run ci` to verify everything builds, then push to deploy
 
 ### Upcoming exhibitions
 
-Open `src/data/siteData.js` and find `upcomingExhibitions`. Add a new string to
-the array:
+Open `src/data/exhibitions.js` and add a new item to `exhibitionEvents`:
 
 ```js
-upcomingExhibitions: [
-  "New Show — Gallery Name, City, ST — June 2026",
-  // existing entries…
+exhibitionEvents: [
+  { label: "New Show - Gallery Name, City, ST - June 2026", date: "2026-06-15" },
+  // existing entries...
 ],
 ```
 
-When a show is over, move its string from `upcomingExhibitions` into the
-`pastExhibitions` array directly below it.
+Use an ISO date in `YYYY-MM-DD` format.
+
+The site now auto-sorts and auto-splits this single list into upcoming and past
+on the Upcoming page, so you do not move entries between two arrays anymore.
 
 ---
 

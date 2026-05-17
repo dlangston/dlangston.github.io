@@ -6,6 +6,19 @@ import instagramIcon from '../../images/icons/instagram.svg';
 import tikTokIcon from '../../images/icons/tikTok.svg';
 import emailIcon from '../../images/icons/email.svg';
 
+export const upcoming = {
+  awards: [
+    'Editors Choice Award San Francisco Maker Fair - 2025',
+    'City of Pawtucket Art Grant 2025 for Kaiju Alotl Midnight Zone interactive experience - 2025',
+  ],
+  press: [
+    {
+      label: 'Motif Magazine - Attack of the Pipe Cleaner Creatures! - 2025',
+      href: 'https://motifri.com/?s=elliot+Langston',
+    },
+  ],
+};
+
 export const navigation = {
   main: Object.freeze([
     { label: 'home', to: '/', end: true },
@@ -111,38 +124,4 @@ export const videoSections = [
   },
 ];
 
-export const upcoming = {
-  upcomingExhibitions: [
-    'Rochester Maker Faire - Nov 14 2025',
-    'Utica NY Anime Fest - Feb 28, 2026',
-    'Kid Con Nashua NH - April 12, 2026',
-    'Philadelphia Maker Faire - Aperil 19, 2026',
-  ],
-  pastExhibitions: [
-    'RI Comic Con 2025 - Featured Artist Vendor - November 7-9, 2025',
-    'Coney Island Maker Faire - 2025',
-    'San Francisco Maker Faire - 2025',
-    'Long Island Maker Faire - 2025',
-    'Granite State Comic Con - 2025',
-    'Providence Maker Faire - 2025',
-    'RI Anime Convention - 2025',
-    'Pawtucket Arts Collaborative 25th anniversary event - 2025',
-    'Kaiju Alotl Midnight Zone interactive experience - Pawtucket Arts Fall Festival - 2025',
-    'Do you See Me - Pawtucket Arts Collaborative Member Show May - 2025',
-    'Syracuse Maker Faire May - 2025',
-    'Philadelphia Maker Faire April - 2025',
-    'Rochester Maker Faire November - 2024',
-    'Coney Island Maker Faire October - 2024',
-    'Godzilla Character Performer - Coney Island NY Mermaid Parade 2015 - Present',
-  ],
-  awards: [
-    'Editors Choice Award San Francisco Maker Fair - 2025',
-    'City of Pawtucket Art Grant 2025 for Kaiju Alotl Midnight Zone interactive experience - 2025',
-  ],
-  press: [
-    {
-      label: 'Motif Magazine - Attack of the Pipe Cleaner Creatures! - 2025',
-      href: 'https://motifri.com/?s=elliot+Langston',
-    },
-  ],
-};
+

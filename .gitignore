@@ -9,5 +9,6 @@ dist
 
 # Development
 .vscode/launch.json
+.vscode/**/*.log
 .env.local
 .env.*.local

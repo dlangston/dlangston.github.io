@@ -32,12 +32,19 @@ Open `src/data/exhibitions.js` and add a new item to `exhibitionEvents`:
 
 ```js
 exhibitionEvents: [
-  { label: "New Show - Gallery Name, City, ST - June 2026", date: "2026-06-15" },
+  { 
+    label: "New Show - Gallery Name, City, ST - June 2026", 
+    date: "2026-06-15",
+    href: "https://example.com/event"  // optional link
+  },
   // existing entries...
 ],
 ```
 
 Use an ISO date in `YYYY-MM-DD` format.
+
+Add an `href` property to make the event clickable (optional).
+The link opens in a new tab.
 
 The site now auto-sorts and auto-splits this single list into upcoming and past
 on the Upcoming page, so you do not move entries between two arrays anymore.

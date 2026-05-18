@@ -1,4 +1,7 @@
 export const exhibitionEvents = [
+  { label: 'RI Anime Con - June 6-7, 2026', date: '2026-06-06', href: 'https://www.rianimecon.com/' },
+  { label: 'PVDFest - September 18-19, 2026', date: '2026-09-18', href: 'https://pvdfest.com/' },
+  { label: 'RI Comic Con - November 6-8, 2026', date: '2026-11-06', href: 'https://www.ricomiccon.com/' },
   { label: 'Rochester Maker Faire - Nov 14, 2025', date: '2025-11-14' },
   { label: 'Utica NY Anime Fest - Feb 28, 2026', date: '2026-02-28' },
   { label: 'Kid Con Nashua NH - April 12, 2026', date: '2026-04-12' },
@@ -64,7 +67,13 @@ export function getExhibitionsByDate(referenceDate = new Date()) {
   pastExhibitions.sort((a, b) => b.date.localeCompare(a.date));
 
   return {
-    upcomingExhibitions: upcomingExhibitions.map((event) => event.label),
-    pastExhibitions: pastExhibitions.map((event) => event.label),
+    upcomingExhibitions: upcomingExhibitions.map((event) => ({
+      label: event.label,
+      href: event.href,
+    })),
+    pastExhibitions: pastExhibitions.map((event) => ({
+      label: event.label,
+      href: event.href,
+    })),
   };
 }

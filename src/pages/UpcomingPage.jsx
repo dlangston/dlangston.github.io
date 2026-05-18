@@ -6,9 +6,21 @@ function SectionList({ title, items }) {
     <section className="space-y-3 rounded-2xl border border-[color:var(--ui-surface-border)] bg-[var(--ui-surface-bg)] p-5">
       <h2 className="text-2xl font-normal">{title}</h2>
       <ul className="list-inside list-disc space-y-2 text-[color:var(--ui-muted-text)]">
-        {items.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
+        {items.map((item) => {
+          const label = typeof item === 'string' ? item : item?.label;
+          const href = typeof item === 'object' ? item?.href : undefined;
+          return (
+            <li key={label}>
+              {href ? (
+                <a href={href} target="_blank" rel="noopener noreferrer" className="hover:text-[color:var(--ui-press-link-hover)]">
+                  {label}
+                </a>
+              ) : (
+                label
+              )}
+            </li>
+          );
+        })}
       </ul>
     </section>
   );

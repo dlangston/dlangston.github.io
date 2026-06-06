@@ -1,5 +1,7 @@
 export const exhibitionEvents = [
   { label: 'RI Anime Con - June 6-7, 2026', date: '2026-06-06', href: 'https://www.rianimecon.com/' },
+  { label: 'Syracuse Maker Faire May - 2026', date: '2026-05-02' },
+  {label: 'Pawtucket Arts Collaborative Spring Show - 2026', date: '2026-15-01'},
   { label: 'PVDFest - September 18-19, 2026', date: '2026-09-18', href: 'https://pvdfest.com/' },
   { label: 'RI Comic Con - November 6-8, 2026', date: '2026-11-06', href: 'https://www.ricomiccon.com/' },
   { label: 'Rochester Maker Faire - Nov 14, 2025', date: '2025-11-14' },

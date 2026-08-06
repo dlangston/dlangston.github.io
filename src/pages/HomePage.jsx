@@ -38,7 +38,15 @@ export default function HomePage() {
       </div>
 
       <div className="cv-auto mx-auto w-full max-w-272">
-        <video controls autoPlay loop muted playsInline poster={homePageImage} className="aspect-video w-full">
+        <video
+          controls
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1280' height='720'><rect width='100%' height='100%' fill='black'/></svg>"
+          className="aspect-video w-full"
+        >
           <source src={heroVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>

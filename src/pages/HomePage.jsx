@@ -26,11 +26,11 @@ const drawingPreview = [
 export default function HomePage() {
   return (
     <section className="space-y-6">
-      <div className="cv-auto mx-auto w-full max-w-272 overflow-hidden">
+      <div className="cv-auto mx-auto w-full max-w-272 overflow-hidden surface-bg-15">
         <img
           src={homePageImage}
           alt="Artwork collage"
-          className="aspect-video w-full object-cover"
+          className="aspect-video w-full object-contain"
           loading="eager"
           decoding="async"
           fetchPriority="high"

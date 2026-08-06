@@ -26,7 +26,7 @@ const drawingPreview = [
 export default function HomePage() {
   return (
     <section className="space-y-6">
-      <div className="cv-auto mx-auto w-full max-w-272 overflow-hidden surface-bg-15">
+      <div className="cv-auto mx-auto w-full max-w-272 overflow-hidden bg-[var(--ui-page-bg)]">
         <img
           src={homePageImage}
           alt="Artwork collage"

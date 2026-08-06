@@ -98,13 +98,14 @@ export default function GalleryGrid({ items }) {
             key={item.id}
             type="button"
             onClick={() => setActiveIndex(index)}
-            className="rounded-xl border border-[color:var(--ui-surface-border)] text-left hover:border-[color:var(--ui-accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500"
+            className="rounded-xl border border-(--ui-surface-border) text-left hover:border-(--ui-accent) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500"
           >
             <img
               src={item.thumb}
               alt={item.alt}
               className="aspect-square w-full rounded-xl object-cover"
               loading="lazy"
+              decoding="async"
             />
           </button>
         ))}
@@ -112,14 +113,14 @@ export default function GalleryGrid({ items }) {
 
       {isOpen && activeItem ? (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[color:var(--ui-modal-overlay)] p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-(--ui-modal-overlay) p-4"
           role="dialog"
           aria-modal="true"
           aria-label="Image viewer"
         >
           <button
             type="button"
-            className="absolute right-4 top-4 rounded-lg bg-[color:var(--ui-modal-control-bg)] p-2 text-[color:var(--ui-modal-control-text)] hover:bg-[color:var(--ui-modal-control-hover-bg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--ui-modal-control-ring)]"
+            className="absolute right-4 top-4 rounded-lg bg-(--ui-modal-control-bg) p-2 text-(--ui-modal-control-text) hover:bg-(--ui-modal-control-hover-bg) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ui-modal-control-ring)"
             onClick={closeModal}
             aria-label="Close"
           >
@@ -130,7 +131,7 @@ export default function GalleryGrid({ items }) {
 
           <button
             type="button"
-            className="absolute left-4 top-1/2 -translate-y-1/2 rounded-lg bg-[color:var(--ui-modal-control-bg)] p-2 text-[color:var(--ui-modal-control-text)] hover:bg-[color:var(--ui-modal-control-hover-bg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--ui-modal-control-ring)]"
+            className="absolute left-4 top-1/2 -translate-y-1/2 rounded-lg bg-(--ui-modal-control-bg) p-2 text-(--ui-modal-control-text) hover:bg-(--ui-modal-control-hover-bg) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ui-modal-control-ring)"
             onClick={(event) => {
               event.stopPropagation();
               showPrev();
@@ -144,8 +145,8 @@ export default function GalleryGrid({ items }) {
 
           <figure className="relative max-h-full max-w-6xl" onClick={(event) => event.stopPropagation()}>
             {isLoadingWatermark ? (
-              <div className="flex max-h-[90vh] max-w-6xl items-center justify-center rounded-xl bg-[color:var(--ui-modal-loading-bg)]">
-                <span className="text-[color:var(--ui-modal-loading-text)]">Loading...</span>
+              <div className="flex max-h-[90vh] max-w-6xl items-center justify-center rounded-xl bg-(--ui-modal-loading-bg)">
+                <span className="text-(--ui-modal-loading-text)">Loading...</span>
               </div>
             ) : (
               <img
@@ -154,14 +155,14 @@ export default function GalleryGrid({ items }) {
                 className="max-h-[90vh] w-auto max-w-full rounded-xl object-contain"
               />
             )}
-            <figcaption className="mt-2 text-center text-sm text-[color:var(--ui-overlay-caption)]">
+            <figcaption className="mt-2 text-center text-sm text-(--ui-overlay-caption)">
               {activeIndex + 1} / {items.length}
             </figcaption>
           </figure>
 
           <button
             type="button"
-            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-lg bg-[color:var(--ui-modal-control-bg)] p-2 text-[color:var(--ui-modal-control-text)] hover:bg-[color:var(--ui-modal-control-hover-bg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--ui-modal-control-ring)]"
+            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-lg bg-(--ui-modal-control-bg) p-2 text-(--ui-modal-control-text) hover:bg-(--ui-modal-control-hover-bg) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ui-modal-control-ring)"
             onClick={(event) => {
               event.stopPropagation();
               showNext();

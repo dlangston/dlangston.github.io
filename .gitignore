@@ -3,6 +3,7 @@ node_modules
 
 # macOS
 .DS_Store
+.ds_store
 
 # Build output
 dist

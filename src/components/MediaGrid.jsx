@@ -8,6 +8,7 @@ export default function MediaGrid({ items, className = '' }) {
           alt="Artwork preview"
           className="aspect-square w-full rounded-lg object-cover"
           loading="lazy"
+          decoding="async"
         />
       ))}
     </div>

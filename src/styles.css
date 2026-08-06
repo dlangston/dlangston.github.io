@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100;400;500;600;700&display=swap');
 @import 'tailwindcss';
 @import './styles/palette.css';
 
@@ -27,4 +26,17 @@ a {
 
 a:hover {
   color: var(--ui-link-hover);
+}
+
+.surface-bg-15 {
+  background-color: color-mix(in oklab, var(--ui-surface-bg) 15%, transparent);
+  contain: paint;
+}
+
+/* Defer rendering work for below-the-fold heavy blocks without visual changes. */
+@supports (content-visibility: auto) {
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 720px;
+  }
 }

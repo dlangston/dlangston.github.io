@@ -4,6 +4,18 @@
 
 React + Tailwind rewrite of the original static portfolio.
 
+## Recent UI changes
+
+- Added dedicated home hero image source (`homePageImage`) above the homepage video.
+- Updated Upcoming page image strip layout:
+  - portrait on the left, collage on the right
+  - shared strip with no gap between images
+  - outer corners rounded
+  - background and border styling adjusted
+- Standardized section/card backgrounds to a shared 15% surface alpha utility (`surface-bg-15`).
+- Updated active/current nav link styling to use `--ui-link-current`.
+- Added live OS theme following when no manual theme is saved; manual toggle now sets explicit light/dark mode.
+
 ## Development
 
 - Install dependencies: `npm install`
@@ -113,6 +125,12 @@ Same filename, no code changes needed.
 
 The four sculpture and four drawing preview images on the home page are set
 explicitly in `src/pages/HomePage.jsx`.
+
+The large image above the home page video is controlled by `homePageImage` in
+`src/data/siteData.js`.
+
+- Current source: `images/scultpture/AxelZilla.jpg`
+- Export used by Home: `export const homePageImage = ...`
 
 At the top of that file, update the `import` lines to point to the new images,
 then update the `sculpturePreview` or `drawingPreview` arrays that reference them.
@@ -230,10 +248,43 @@ Example (surface cards):
 
 - `--ui-page-bg`, `--ui-page-text`
 - `--ui-surface-bg`, `--ui-surface-border`, `--ui-divider`
-- `--ui-link`, `--ui-link-hover`, `--ui-link-active`
+- `--ui-link`, `--ui-link-hover`, `--ui-link-active`, `--ui-link-current`
 - `--ui-accent`, `--ui-accent-hover`
 - `--ui-press-link`, `--ui-press-link-hover`
 - `--watermark-rgba` (image watermark color)
+
+#### Current page nav link color
+
+Active/current nav link color is controlled by `--ui-link-current` in
+`src/styles/palette.css`.
+
+- `:root` value applies in light theme
+- `.dark` value applies in dark theme
+
+This token is used by both the main nav and the drawings sub-nav.
+
+#### Section/card background alpha utility
+
+The site includes a reusable class in `src/styles.css`:
+
+```css
+.surface-bg-15 {
+  background-color: color-mix(in oklab, var(--ui-surface-bg) 15%, transparent);
+}
+```
+
+Use `surface-bg-15` on section/card wrappers when you want theme-aware surface
+color at 15% alpha.
+
+#### Theme auto-detect behavior
+
+Theme state is managed in `src/context/ThemeContext.jsx`.
+
+- If no saved theme exists, the site follows OS theme (`prefers-color-scheme`).
+- While in system mode, changing OS light/dark updates the site live.
+- If a user toggles theme manually, it switches to explicit `light` or `dark`
+  and stores that in `localStorage` under `theme`.
+- To return to auto-follow mode, remove the `theme` key from `localStorage`.
 
 #### Watermark text size (copyright)
 

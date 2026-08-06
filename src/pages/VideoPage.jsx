@@ -16,17 +16,21 @@ export default function VideoPage() {
   return (
     <section className="space-y-10">
       {videoSections.map((section) => (
-        <div key={section.title} className="space-y-4 rounded-2xl border border-[color:var(--ui-surface-border)] bg-[var(--ui-surface-bg)] p-4">
+        <div
+          key={section.title}
+          className="cv-auto surface-bg-15 space-y-4 rounded-2xl border border-(--ui-surface-border) p-4"
+        >
           <h2 className="text-2xl font-normal">{section.title}</h2>
 
           {section.embeds?.map((embed) => (
             <div key={embed.title} className="space-y-2">
-              <h3 className="ml-4 text-lg font-normal text-[color:var(--ui-muted-text)]">{embed.title}</h3>
-              <div className="aspect-video w-full overflow-hidden rounded-xl border border-[color:var(--ui-surface-border)]">
+              <h3 className="ml-4 text-lg font-normal text-(--ui-muted-text)">{embed.title}</h3>
+              <div className="aspect-video w-full overflow-hidden rounded-xl border border-(--ui-surface-border)">
                 <iframe
                   src={embed.src}
                   title={embed.title}
                   className="h-full w-full"
+                  loading="lazy"
                   allow="accelerometer; clipboard-write; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
@@ -37,8 +41,13 @@ export default function VideoPage() {
 
           {section.videos?.map((video) => (
             <div key={video.title} className="space-y-2">
-              <h3 className="ml-4 text-lg font-normal text-[color:var(--ui-muted-text)]">{video.title}</h3>
-              <video controls muted={video.muted} className="w-full rounded-xl border border-[color:var(--ui-surface-border)]">
+              <h3 className="ml-4 text-lg font-normal text-(--ui-muted-text)">{video.title}</h3>
+              <video
+                controls
+                muted={video.muted}
+                preload="metadata"
+                className="aspect-video w-full rounded-xl border border-(--ui-surface-border)"
+              >
                 <source src={video.src} type={getVideoMimeType(video.src)} />
                 Your browser does not support the video tag.
               </video>

@@ -47,6 +47,7 @@
   --ui-link: var(--color-slate-700);
   --ui-link-hover: var(--color-gray-500);
   --ui-link-active: var(--color-slate-800);
+  --ui-link-current: #7c3aed;
   --ui-muted-text: var(--color-neutral-800);
 
   --ui-accent: var(--color-cyan-400);
@@ -93,6 +94,7 @@
   --ui-link: var(--color-slate-300);
   --ui-link-hover: var(--color-gray-400);
   --ui-link-active: var(--color-slate-200);
+  --ui-link-current: #a78bfa;
   --ui-muted-text: var(--color-neutral-200);
 
   --ui-accent: var(--color-cyan-500);

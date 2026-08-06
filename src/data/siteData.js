@@ -1,5 +1,6 @@
 import logoImage from '../../images/elliot-hs_resized.png';
 import collageJpg from '../../images/collage.JPG';
+import homePageHeroJpg from '../../images/scultpture/AxelZilla.jpg';
 import editorsChoiceJpg from '../../images/elliot-editors-choice.jpg';
 import youtubeIcon from '../../images/icons/youTube.svg';
 import instagramIcon from '../../images/icons/instagram.svg';
@@ -42,6 +43,7 @@ export const navigation = {
 export const heroVideo = '/videos/stopAnimation/primalCombat/PrimalCombat.m4v';
 export const logo = logoImage;
 export const collageImage = collageJpg;
+export const homePageImage = homePageHeroJpg;
 export const editorsChoiceImage = editorsChoiceJpg;
 
 export const socialLinks = [

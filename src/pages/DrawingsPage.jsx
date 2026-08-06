@@ -12,7 +12,7 @@ export default function DrawingsPage() {
             <Link
               key={category.key}
               to={`/drawings/${category.key}`}
-              className="rounded-2xl border border-[color:var(--ui-surface-border)] bg-[var(--ui-surface-bg)] p-4 hover:border-[color:var(--ui-accent)]"
+              className="cv-auto surface-bg-15 rounded-2xl border border-(--ui-surface-border) p-4 hover:border-(--ui-accent)"
             >
               <h2 className="mb-4 text-lg font-normal uppercase tracking-wide">{category.label}</h2>
               <div className="grid grid-cols-2 gap-2">
@@ -23,6 +23,7 @@ export default function DrawingsPage() {
                     alt={category.label}
                     className="aspect-square w-full rounded-lg object-cover"
                     loading="lazy"
+                    decoding="async"
                   />
                 ))}
               </div>

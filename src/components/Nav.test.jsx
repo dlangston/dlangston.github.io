@@ -4,23 +4,27 @@ import { describe, expect, it } from 'vitest';
 import Nav from './Nav';
 
 describe('Nav', () => {
-  it('hides HOME on the home page', () => {
+  it('shows HOME as active on the home page', () => {
     render(
       <MemoryRouter initialEntries={['/']}>
         <Nav />
       </MemoryRouter>
     );
 
-    expect(screen.queryByRole('link', { name: /home/i })).not.toBeInTheDocument();
+    const homeLink = screen.getByRole('link', { name: /home/i });
+    expect(homeLink).toBeInTheDocument();
+    expect(homeLink).toHaveAttribute('aria-current', 'page');
   });
 
-  it('shows HOME when navigating away from home', () => {
+  it('shows HOME as inactive when navigating away from home', () => {
     render(
       <MemoryRouter initialEntries={['/video']}>
         <Nav />
       </MemoryRouter>
     );
 
-    expect(screen.getByRole('link', { name: /home/i })).toBeInTheDocument();
+    const homeLink = screen.getByRole('link', { name: /home/i });
+    expect(homeLink).toBeInTheDocument();
+    expect(homeLink).not.toHaveAttribute('aria-current', 'page');
   });
 });

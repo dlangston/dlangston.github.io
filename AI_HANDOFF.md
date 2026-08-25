@@ -214,20 +214,17 @@ For visual fixes, previewing the built app is more trustworthy than only checkin
 
 ## Deployment
 
-Deploy workflow is in `.github/workflows/deploy.yml`.
+There are three separate workflow files under `.github/workflows/`, all running `npm run ci`, but with different triggers and purposes. Do not assume they are the same workflow just because they share that step.
 
-Current deploy behavior:
+- `ci.yml` — runs on every push, every pull request, and manual dispatch. Runs `npm run ci` and verifies `dist/index.html` references a compiled asset rather than raw source JSX. Does not deploy.
+- `deploy.yml` — the actual deploy workflow. Triggers on push to `master` or `main` (plus manual `workflow_dispatch`). Runs the same checks as `ci.yml`, then uploads `dist` and deploys to GitHub Pages.
+- `preview.yml` — manual `workflow_dispatch` only, with an optional `ref` input. Builds any branch/tag/SHA and uploads `dist` as a downloadable artifact. Does not deploy.
 
-- triggers on push to `master` and `main`
-- also supports manual `workflow_dispatch`
-- runs `npm run ci`
-- uploads `dist`
-- deploys to GitHub Pages
+Practical notes:
 
-Practical note from recent work:
-
-- manual workflow runs may exist alongside automatic push runs
-- when checking Actions, verify whether the event is `push` or `workflow_dispatch`
+- a push to `master`/`main` fires `ci.yml` and `deploy.yml` at the same time — that's expected, not a duplicate/misconfigured run
+- pull requests only run `ci.yml`; there is no PR preview deploy
+- when checking Actions, check both the workflow name and the event (`push` vs `pull_request` vs `workflow_dispatch`) to know which one you're looking at
 
 ## Working style for this repo
 

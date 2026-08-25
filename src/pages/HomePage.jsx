@@ -44,8 +44,11 @@ export default function HomePage() {
           loop
           muted
           playsInline
-          poster="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1280' height='720'><rect width='100%' height='100%' fill='black'/></svg>"
+          poster="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1280' height='720'><rect width='100%' height='100%' fill='black' /></svg>"
           className="aspect-video w-full"
+          // Not sure if this was actually a fix? 
+          // poster="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+          // className="aspect-video w-full bg-[var(--ui-page-bg)]"
         >
           <source src={heroVideo} type="video/mp4" />
           Your browser does not support the video tag.

@@ -28,8 +28,16 @@ React + Tailwind rewrite of the original static portfolio.
 - Enforce 4px spacing grid classes: `npm run check:spacing`
 - Run component tests: `npm run test`
 - CI command (spacing check + production build): `npm run ci`
-- GitHub Actions runs `npm run ci` on push, pull request, and manual dispatch: [.github/workflows/ci.yml](.github/workflows/ci.yml)
-- Manual preview workflow builds selected ref and uploads `dist` as an artifact: [.github/workflows/preview.yml](.github/workflows/preview.yml)
+
+### GitHub Actions workflows
+
+There are three separate workflow files, all running `npm run ci` but for different purposes:
+
+- [.github/workflows/ci.yml](.github/workflows/ci.yml) — runs on every push, every pull request, and manual dispatch. Verifies `npm run ci` passes and that `dist/index.html` references a compiled asset (not raw source JSX). Does not deploy anything.
+- [.github/workflows/deploy.yml](.github/workflows/deploy.yml) — runs on push to `master` or `main` (plus manual dispatch). Runs the same checks as `ci.yml`, then uploads `dist` and deploys to GitHub Pages. This is the actual deploy.
+- [.github/workflows/preview.yml](.github/workflows/preview.yml) — manual dispatch only. Builds any ref (branch, tag, or SHA) you specify and uploads `dist` as a downloadable artifact, without deploying.
+
+A push to `master` triggers both `ci.yml` and `deploy.yml` in parallel — that's expected, not a misconfiguration. Pull requests only trigger `ci.yml`, since deploys only happen from `master`/`main`.
 
 ## Editing the site
 

@@ -9,7 +9,7 @@
     "check:spacing": "node scripts/check-spacing-grid.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
-    "build": "vite build",
+    "build": "vite build && cp dist/index.html dist/404.html",
     "preview": "vite preview",
     "ci": "npm run check:spacing && npm run test && npm run build"
   },

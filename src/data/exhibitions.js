@@ -1,9 +1,11 @@
+// NOTE: Use last day of exhibition in date field so that sorting and filtering by date works correctly.
 export const exhibitionEvents = [
+  { label: 'Coney Island Maker Faire - June 2026', date: '2026-06-01' },
   { label: 'Pancakes and Booze - Aug 2026', date: '2026-08-01' },
   { label: 'Slater Park Fest - Aug 2026', date: '2026-08-01' },
   { label: 'Pawtucket Arts festival - Aug 2026', date: '2026-08-01' },
-  { label: 'Making Waves exhibition The Big E - September 2026', date: '2026-09-01' },
-  { label: 'Maker faire San Francisco - September 2026', date: '2026-09-01' },
+  { label: 'Making Waves exhibition The Big E - 2026-09-18 - 2026-10-04', date: '2026-10-04' },
+  { label: 'Maker faire San Francisco - September 2026', date: '2026-09-27' },
   { label: 'Rochester Maker Faire - November 2026', date: '2026-11-01' },
   { label: 'Vibrant Pawtucket Arts Collaborative Spring Show - April 2026', date: '2026-04-01' },
   { label: 'RI Anime Con - June, 2026', date: '2026-06-06'},

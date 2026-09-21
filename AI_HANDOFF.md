@@ -173,6 +173,8 @@ Current styling behavior:
 - active/current links use the `--ui-link-current` token
 - home link is part of the normal nav
 - the drawings sub-nav only appears on drawing routes
+- both navs wrap onto multiple rows on narrow screens (no horizontal scroll)
+- nav items with `external: true` (e.g. `shop`, the Wix store) open in a new tab
 
 If nav behavior changes, inspect `src/components/Nav.jsx` and `src/components/DrawingsNav.jsx`.
 
@@ -224,6 +226,7 @@ Practical notes:
 
 - a push to `master`/`main` fires `ci.yml` and `deploy.yml` at the same time — that's expected, not a duplicate/misconfigured run
 - pull requests only run `ci.yml`; there is no PR preview deploy
+- the site uses `BrowserRouter` on GitHub Pages, which has no server-side routing; `npm run build` copies `dist/index.html` to `dist/404.html` so refreshing or deep-linking a route like `/video` serves the app instead of GitHub's 404 page — do not remove that step
 - when checking Actions, check both the workflow name and the event (`push` vs `pull_request` vs `workflow_dispatch`) to know which one you're looking at
 
 ## Working style for this repo

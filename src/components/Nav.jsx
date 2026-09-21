@@ -23,7 +23,11 @@ export default function Nav() {
                 {item.label}
               </NavLink>
             ) : (
-              <a href={item.href} className="px-2 py-1 text-(--ui-link) hover:text-(--ui-link-hover)">
+              <a
+                href={item.href}
+                className="px-2 py-1 text-(--ui-link) hover:text-(--ui-link-hover)"
+                {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              >
                 {item.label}
               </a>
             )}

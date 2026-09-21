@@ -29,6 +29,7 @@ export const navigation = {
     { label: 'about', href: '/#about' },
     { label: 'upcoming', to: '/upcoming' },
     { label: 'contact', href: '#contact' },
+    { label: 'shop', href: 'https://jaxlangston.wixsite.com/kaiju-alotl', external: true },
   ]),
   drawings: Object.freeze([
     { key: 'dragon', label: 'Dragon' },

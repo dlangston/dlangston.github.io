@@ -31,7 +31,7 @@ export default function UpcomingPage() {
 
   return (
     <section className="space-y-6">
-      <SectionList title="Upcoming Exhibitions" items={upcomingExhibitions} />
+      <SectionList title="Current and Upcoming Exhibitions" items={upcomingExhibitions} />
       <SectionList title="Past Exhibitions" items={pastExhibitions} />
       <SectionList title="Awards" items={upcoming.awards} />
 
